@@ -2,7 +2,9 @@
 # The Dunwich Legacy
 
 ---
+
 ## Encounter Sets
+
 
 ### Blood on the Altar
 
@@ -196,69 +198,252 @@ code: return_to_where_doom_awaits
 
 [ArkhamDB](https://arkhamdb.com/find?q=m:return_to_where_doom_awaits&sort=set&view=list&decks=encounter)
 
+
 ---
+
 ## Scenarios
 
 ### I-A. Extracurricular Activity
 
 id: extracurricular_activity
 
+---
+
+#### Encounter sets
+
+[Whippoorwills](https://arkhamdb.com/find?q=m:whippoorwills&sort=set&view=list&decks=encounter)
+    
+[The Beyond](https://arkhamdb.com/find?q=m:the_beyond&sort=set&view=list&decks=encounter)
+    
+[Extracurricular Activity](https://arkhamdb.com/find?q=m:extracurricular_activity&sort=set&view=list&decks=encounter)
+    
+[Sorcery](https://arkhamdb.com/find?q=m:sorcery&sort=set&view=list&decks=encounter)
+    
+[Bishop's Thralls](https://arkhamdb.com/find?q=m:bishops_thralls&sort=set&view=list&decks=encounter)
+    
 ### I-A. Return to Extracurricular Activity
 
 id: return_to_extracurricular_activity
 
+---
+
+#### Encounter sets
+
+[Resurgent Evils](https://arkhamdb.com/find?q=m:resurgent_evils&sort=set&view=list&decks=encounter)
+    
+[Beyond the Threshold](https://arkhamdb.com/find?q=m:beyond_the_threshold&sort=set&view=list&decks=encounter)
+    
+[Return to Extracurricular Activity](https://arkhamdb.com/find?q=m:return_to_extracurricular_activities&sort=set&view=list&decks=encounter)
+    
+[Secret Doors](https://arkhamdb.com/find?q=m:secret_doors&sort=set&view=list&decks=encounter)
+    
+[Yog-Sothoth's Emissaries](https://arkhamdb.com/find?q=m:yog_sothoths_emissaries&sort=set&view=list&decks=encounter)
+    
 ### I-B. The House Always Wins
 
 id: the_house_always_wins
 
+---
+
+#### Encounter sets
+
+[Naomi's Crew](https://arkhamdb.com/find?q=m:naomis_crew&sort=set&view=list&decks=encounter)
+    
+[Hideous Abominations](https://arkhamdb.com/find?q=m:hideous_abominations&sort=set&view=list&decks=encounter)
+    
+[The House Always Wins](https://arkhamdb.com/find?q=m:the_house_always_wins&sort=set&view=list&decks=encounter)
+    
+[Bad Luck](https://arkhamdb.com/find?q=m:bad_luck&sort=set&view=list&decks=encounter)
+    
 ### I-B. Return to The House Always Wins
 
 id: return_to_the_house_always_wins
 
+---
+
+#### Encounter sets
+
+[Erratic Fear](https://arkhamdb.com/find?q=m:erratic_fear&sort=set&view=list&decks=encounter)
+    
+[Return to The House Always Wins](https://arkhamdb.com/find?q=m:return_to_the_house_always_wins&sort=set&view=list&decks=encounter)
+    
 ### II. The Miskatonic Museum
 
 id: the_miskatonic_museum
 
+---
+
+#### Encounter sets
+
+[The Beyond](https://arkhamdb.com/find?q=m:the_beyond&sort=set&view=list&decks=encounter)
+    
+[Sorcery](https://arkhamdb.com/find?q=m:sorcery&sort=set&view=list&decks=encounter)
+    
+[Bad Luck](https://arkhamdb.com/find?q=m:bad_luck&sort=set&view=list&decks=encounter)
+    
+[The Miskatonic Museum](https://arkhamdb.com/find?q=m:the_miskatonic_museum&sort=set&view=list&decks=encounter)
+    
 ### II. Return to The Miskatonic Museum
 
 id: return_to_the_miskatonic_museum
 
+---
+
+#### Encounter sets
+
+[Beyond the Threshold](https://arkhamdb.com/find?q=m:beyond_the_threshold&sort=set&view=list&decks=encounter)
+    
+[Secret Doors](https://arkhamdb.com/find?q=m:secret_doors&sort=set&view=list&decks=encounter)
+    
+[Return to The Miskatonic Museum](https://arkhamdb.com/find?q=m:return_to_the_miskatonic_museum&sort=set&view=list&decks=encounter)
+    
+[Creeping Cold](https://arkhamdb.com/find?q=m:creeping_cold&sort=set&view=list&decks=encounter)
+    
 ### III. The Essex County Express
 
 id: essex_county_express
 
+---
+
+#### Encounter sets
+
+[The Essex County Express](https://arkhamdb.com/find?q=m:essex_county_express&sort=set&view=list&decks=encounter)
+    
+[The Beyond](https://arkhamdb.com/find?q=m:the_beyond&sort=set&view=list&decks=encounter)
+    
 ### III. Return to The Essex County Express
 
 id: return_to_essex_county_express
 
+---
+
+#### Encounter sets
+
+[Resurgent Evils](https://arkhamdb.com/find?q=m:resurgent_evils&sort=set&view=list&decks=encounter)
+    
+[Return to The Essex County Express](https://arkhamdb.com/find?q=m:return_to_the_essex_county_express&sort=set&view=list&decks=encounter)
+    
+[Beyond the Threshold](https://arkhamdb.com/find?q=m:beyond_the_threshold&sort=set&view=list&decks=encounter)
+    
+[Erratic Fear](https://arkhamdb.com/find?q=m:erratic_fear&sort=set&view=list&decks=encounter)
+    
 ### IV. Blood on the Altar
 
 id: blood_on_the_altar
 
+---
+
+#### Encounter sets
+
+[Blood on the Altar](https://arkhamdb.com/find?q=m:blood_on_the_altar&sort=set&view=list&decks=encounter)
+    
+[Dunwich](https://arkhamdb.com/find?q=m:dunwich&sort=set&view=list&decks=encounter)
+    
+[Whippoorwills](https://arkhamdb.com/find?q=m:whippoorwills&sort=set&view=list&decks=encounter)
+    
+[Naomi's Crew](https://arkhamdb.com/find?q=m:naomis_crew&sort=set&view=list&decks=encounter)
+    
 ### IV. Return to Blood on the Altar
 
 id: return_to_blood_on_the_altar
 
+---
+
+#### Encounter sets
+
+[Return to Blood on the Altar](https://arkhamdb.com/find?q=m:return_to_blood_on_the_altar&sort=set&view=list&decks=encounter)
+    
+[Resurgent Evils](https://arkhamdb.com/find?q=m:resurgent_evils&sort=set&view=list&decks=encounter)
+    
 ### V. Undimensioned and Unseen
 
 id: undimensioned_and_unseen
 
+---
+
+#### Encounter sets
+
+[Dunwich](https://arkhamdb.com/find?q=m:dunwich&sort=set&view=list&decks=encounter)
+    
+[Whippoorwills](https://arkhamdb.com/find?q=m:whippoorwills&sort=set&view=list&decks=encounter)
+    
+[Undimensioned and Unseen](https://arkhamdb.com/find?q=m:undimensioned_and_unseen&sort=set&view=list&decks=encounter)
+    
+[Beast Thralls](https://arkhamdb.com/find?q=m:beast_thralls&sort=set&view=list&decks=encounter)
+    
 ### V. Return to Undimensioned and Unseen
 
 id: return_to_undimensioned_and_unseen
 
+---
+
+#### Encounter sets
+
+[Erratic Fear](https://arkhamdb.com/find?q=m:erratic_fear&sort=set&view=list&decks=encounter)
+    
+[Return to Undimensioned and Unseen](https://arkhamdb.com/find?q=m:return_to_undimensioned_and_unseen&sort=set&view=list&decks=encounter)
+    
 ### VI. Where Doom Awaits
 
 id: where_doom_awaits
 
+---
+
+#### Encounter sets
+
+[Sorcery](https://arkhamdb.com/find?q=m:sorcery&sort=set&view=list&decks=encounter)
+    
+[Bishop's Thralls](https://arkhamdb.com/find?q=m:bishops_thralls&sort=set&view=list&decks=encounter)
+    
+[Hideous Abominations](https://arkhamdb.com/find?q=m:hideous_abominations&sort=set&view=list&decks=encounter)
+    
+[Beast Thralls](https://arkhamdb.com/find?q=m:beast_thralls&sort=set&view=list&decks=encounter)
+    
+[Where Doom Awaits](https://arkhamdb.com/find?q=m:where_doom_awaits&sort=set&view=list&decks=encounter)
+    
 ### VI. Return to Where Doom Awaits
 
 id: return_to_where_doom_awaits
 
+---
+
+#### Encounter sets
+
+[Resurgent Evils](https://arkhamdb.com/find?q=m:resurgent_evils&sort=set&view=list&decks=encounter)
+    
+[Erratic Fear](https://arkhamdb.com/find?q=m:erratic_fear&sort=set&view=list&decks=encounter)
+    
+[Creeping Cold](https://arkhamdb.com/find?q=m:creeping_cold&sort=set&view=list&decks=encounter)
+    
+[Return to Where Doom Awaits](https://arkhamdb.com/find?q=m:return_to_where_doom_awaits&sort=set&view=list&decks=encounter)
+    
 ### VII. Lost in Time and Space
 
 id: lost_in_time_and_space
 
+---
+
+#### Encounter sets
+
+[The Beyond](https://arkhamdb.com/find?q=m:the_beyond&sort=set&view=list&decks=encounter)
+    
+[Sorcery](https://arkhamdb.com/find?q=m:sorcery&sort=set&view=list&decks=encounter)
+    
+[Lost in Time and Space](https://arkhamdb.com/find?q=m:lost_in_time_and_space&sort=set&view=list&decks=encounter)
+    
+[Hideous Abominations](https://arkhamdb.com/find?q=m:hideous_abominations&sort=set&view=list&decks=encounter)
+    
 ### VII. Return to Lost in Time and Space
 
 id: return_to_lost_in_time_and_space
+
+---
+
+#### Encounter sets
+
+[Beyond the Threshold](https://arkhamdb.com/find?q=m:beyond_the_threshold&sort=set&view=list&decks=encounter)
+    
+[Yog-Sothoth's Emissaries](https://arkhamdb.com/find?q=m:yog_sothoths_emissaries&sort=set&view=list&decks=encounter)
+    
+[Return to Lost in Time and Space](https://arkhamdb.com/find?q=m:return_to_lost_in_time_and_space&sort=set&view=list&decks=encounter)
+    

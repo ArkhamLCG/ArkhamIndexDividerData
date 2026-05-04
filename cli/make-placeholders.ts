@@ -180,7 +180,9 @@ let readme = `
 # ${story.name}
 
 ---
+
 ## Encounter Sets
+
 `;
 
 for (const code of encounterSets) {
@@ -188,7 +190,9 @@ for (const code of encounterSets) {
 }
 
 readme += `
+
 ---
+
 ## Scenarios
 `;
 
@@ -198,9 +202,13 @@ for (const scenario of scenarios) {
 
 fs.writeFileSync(path.join(scenarioDir, 'README.md'), readme);
 
+function getEncounterUrl(code: string): string {
+  return `https://arkhamdb.com/find?q=m:${code}&sort=set&view=list&decks=encounter`;
+}
+
 
 function generateEncounterReadme(code: string): string {
-  const arkhamDBSearchUrl = `https://arkhamdb.com/find?q=m:${code}&sort=set&view=list&decks=encounter`;
+  const arkhamDBSearchUrl = getEncounterUrl(code);
   const encounterSet = encounters.find((encounterSet) => encounterSet.code === code);
   if (!encounterSet) {
     console.warn(`encounter set with code ${code} not found`);
@@ -208,6 +216,14 @@ function generateEncounterReadme(code: string): string {
   }
 
   const { name } = encounterSet;
+
+  if (!encounterSet.is_official) {
+    return `
+### ${name}
+
+code: ${code}
+`;
+  }
 
   return `
 ### ${name}
@@ -219,10 +235,32 @@ code: ${code}
 }
 
 function generateScenarioReadme(scenario: Scenario): string {
-  return `
+
+  const scenarioEncounters = encounters.filter(({ code }) => scenario.encounter_sets?.includes(code));
+  let contents = `
 ### ${scenario.number_text ?? ''}. ${scenario.scenario_name}
 
 id: ${scenario.id}
+
+---
+
+#### Encounter sets
 `;
+
+  for (const encounter of scenarioEncounters) {
+    const url = getEncounterUrl(encounter.code);
+
+    if (encounter.is_official) {
+      contents += `
+[${encounter.name}](${url})
+`;
+    } else {
+      contents += `
+- ${encounter.name}
+`;
+    }
+  }
+
+  return contents;
 }
 
