@@ -16,6 +16,7 @@ if (!code) {
 }
 
 const scenarioDir = path.join(imagesDir, 'scenario', code);
+
 if (!fs.existsSync(scenarioDir)) {
   fs.mkdirSync(scenarioDir, { recursive: true });
 }
@@ -27,7 +28,7 @@ if (!url) {
 }
 
 const response = await fetch(url);
-const { stories }: ArkhamDivider.Core = await response.json();
+const { stories, encounterSets: encounters }: ArkhamDivider.Core = await response.json();
 
 const story = stories.find((story) => story.code === code);
 
@@ -35,11 +36,16 @@ if (!story) {
   throw new Error(`story with code ${code} not found`);
 }
 
-const { investigators, return_to_code } = story;
+const { investigators } = story;
 
-const returnStory = stories.find((story) => story.code === return_to_code);
+const returnStory = stories.find((story) => story.return_to_code === code);
 
 const returnEncounters = returnStory?.encounter_sets ?? []
+
+const campaignCodes = [
+  story.code,
+  returnStory?.code,
+].filter((code): code is string => Boolean(code));
 
 const encounterSets = [
   ...story.encounter_sets,
@@ -51,7 +57,37 @@ const scenarioEncounters = [
   ...returnStory?.scenario_encounter_sets ?? [],
 ]
 
+type Scenario = NonNullable<ArkhamDivider.Core['stories'][number]['scenarios']>[number];
+
+const storyScenarios = [
+  ...story.scenarios ?? [],
+  story.scenario,
+]
+
+const returnScenarios = [
+  ...returnStory?.scenarios ?? [],
+  returnStory?.scenario,
+]
+
+const getScenarioIndex = (scenario: Scenario) => {
+  const sI = storyScenarios.indexOf(scenario);
+  const rI = returnScenarios.indexOf(scenario);
+
+  return sI === -1 ? rI : sI;
+}
+
+const scenarios = [
+  ...storyScenarios,
+  ...returnScenarios,
+].filter((s): s is Scenario => Boolean(s))
+.sort((a, b) => {
+  const iA = getScenarioIndex(a);
+  const iB = getScenarioIndex(b);
+  return iA - iB;
+});
+
 const codes = [
+  ...campaignCodes,
   ...encounterSets,
   ...scenarioEncounters,
   ...scenarioEncounters.map((code) => `${code}-encounter`),
@@ -133,3 +169,56 @@ async function generatePlaceholder(width: number, height: number): Promise<Buffe
     .avif()
     .toBuffer();
 }
+
+// TODO: generate README.md
+
+let readme = `
+# ${story.name}
+
+---
+## Encounter Sets
+`;
+
+for (const code of encounterSets) {
+  readme += generateEncounterReadme(code);
+}
+
+readme += `
+---
+## Scenarios
+`;
+
+for (const scenario of scenarios) {
+  readme += generateScenarioReadme(scenario);
+}
+
+fs.writeFileSync(path.join(scenarioDir, 'README.md'), readme);
+
+
+function generateEncounterReadme(code: string): string {
+  const arkhamDBSearchUrl = `https://arkhamdb.com/find?q=m:${code}&sort=set&view=list&decks=encounter`;
+  const encounterSet = encounters.find((encounterSet) => encounterSet.code === code);
+  if (!encounterSet) {
+    console.warn(`encounter set with code ${code} not found`);
+    return '';
+  }
+
+  const { name } = encounterSet;
+
+  return `
+### ${name}
+
+code: ${code}
+
+[ArkhamDB](${arkhamDBSearchUrl})
+`;
+}
+
+function generateScenarioReadme(scenario: Scenario): string {
+  return `
+### ${scenario.number_text ?? ''}. ${scenario.scenario_name}
+
+id: ${scenario.id}
+`;
+}
+
