@@ -199,22 +199,6 @@ code: return_to_where_doom_awaits
 ---
 ## Scenarios
 
-### IV. Blood on the Altar
-
-id: blood_on_the_altar
-
-### IV. Return to Blood on the Altar
-
-id: return_to_blood_on_the_altar
-
-### III. The Essex County Express
-
-id: essex_county_express
-
-### III. Return to The Essex County Express
-
-id: return_to_essex_county_express
-
 ### I-A. Extracurricular Activity
 
 id: extracurricular_activity
@@ -231,14 +215,6 @@ id: the_house_always_wins
 
 id: return_to_the_house_always_wins
 
-### VII. Lost in Time and Space
-
-id: lost_in_time_and_space
-
-### VII. Return to Lost in Time and Space
-
-id: return_to_lost_in_time_and_space
-
 ### II. The Miskatonic Museum
 
 id: the_miskatonic_museum
@@ -246,6 +222,22 @@ id: the_miskatonic_museum
 ### II. Return to The Miskatonic Museum
 
 id: return_to_the_miskatonic_museum
+
+### III. The Essex County Express
+
+id: essex_county_express
+
+### III. Return to The Essex County Express
+
+id: return_to_essex_county_express
+
+### IV. Blood on the Altar
+
+id: blood_on_the_altar
+
+### IV. Return to Blood on the Altar
+
+id: return_to_blood_on_the_altar
 
 ### V. Undimensioned and Unseen
 
@@ -262,3 +254,11 @@ id: where_doom_awaits
 ### VI. Return to Where Doom Awaits
 
 id: return_to_where_doom_awaits
+
+### VII. Lost in Time and Space
+
+id: lost_in_time_and_space
+
+### VII. Return to Lost in Time and Space
+
+id: return_to_lost_in_time_and_space

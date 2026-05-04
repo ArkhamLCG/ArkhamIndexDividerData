@@ -25,10 +25,14 @@
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
+    "@types/ramda": "^0.31.1",
     "arkham-divider-data": "^1.4.0",
     "dotenv": "^17.4.2",
     "http-server": "^14.1.1",
     "lefthook": "^1.11.14",
+    "ramda": "^0.32.0",
+    "ramda-adjunct": "^6.0.0",
+    "romans": "^3.1.0",
     "sharp": "^0.33.5",
     "tsx": "^4.21.0"
   }

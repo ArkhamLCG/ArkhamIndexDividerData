@@ -2,6 +2,8 @@ import path from 'node:path';
 import 'dotenv/config';
 import fs from 'node:fs';
 import sharp from 'sharp';
+import { isNotNil } from 'ramda'
+
 import type { ArkhamDivider } from 'arkham-divider-data';
 
 const ROOT = process.cwd();
@@ -45,7 +47,7 @@ const returnEncounters = returnStory?.encounter_sets ?? []
 const campaignCodes = [
   story.code,
   returnStory?.code,
-].filter((code): code is string => Boolean(code));
+].filter(isNotNil);
 
 const encounterSets = [
   ...story.encounter_sets,
@@ -59,15 +61,17 @@ const scenarioEncounters = [
 
 type Scenario = NonNullable<ArkhamDivider.Core['stories'][number]['scenarios']>[number];
 
+const scenarioSort = (a: Scenario, b: Scenario) => (a?.number ?? 0) - (b?.number ?? 0);
+
 const storyScenarios = [
   ...story.scenarios ?? [],
   story.scenario,
-]
+].filter(isNotNil).sort(scenarioSort);
 
 const returnScenarios = [
   ...returnStory?.scenarios ?? [],
   returnStory?.scenario,
-]
+].filter(isNotNil).sort(scenarioSort);
 
 const getScenarioIndex = (scenario: Scenario) => {
   const sI = storyScenarios.indexOf(scenario);
@@ -79,7 +83,7 @@ const getScenarioIndex = (scenario: Scenario) => {
 const scenarios = [
   ...storyScenarios,
   ...returnScenarios,
-].filter((s): s is Scenario => Boolean(s))
+]
 .sort((a, b) => {
   const iA = getScenarioIndex(a);
   const iB = getScenarioIndex(b);
