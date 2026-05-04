@@ -1,0 +1,18 @@
+{
+  "supported_stories": [
+    "core",
+    "core_2016",
+    "core_2026",
+    "core_2016-investigators",
+    "core_2026-investigators",
+    "starter-decks"
+  ],
+  "investigator_alternatives": {
+    "01001": 3,
+    "01002": 3,
+    "01003": 2,
+    "01004": 2,
+    "01005": 2,
+    "02003": 3
+  }
+}

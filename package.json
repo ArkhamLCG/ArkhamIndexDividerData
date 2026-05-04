@@ -1,0 +1,33 @@
+{
+  "name": "arkhamindexdividerdata",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/ArkhamLCG/ArkhamIndexDividerData#readme",
+  "bugs": {
+    "url": "https://github.com/ArkhamLCG/ArkhamIndexDividerData/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArkhamLCG/ArkhamIndexDividerData.git"
+  },
+  "license": "ISC",
+  "author": "Vladimir Yazykov",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server public --cors -p 0",
+    "build": "npm run avif && npm run clean:sources",
+    "avif": "sh cli/avif.sh",
+    "optimize": "sh cli/optimize.sh",
+    "clean:sources": "sh cli/clean-sources.sh",
+    "placeholders": "tsx cli/make-placeholders.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "arkham-divider-data": "^1.4.0",
+    "dotenv": "^17.4.2",
+    "http-server": "^14.1.1",
+    "sharp": "^0.33.5",
+    "tsx": "^4.21.0"
+  }
+}
