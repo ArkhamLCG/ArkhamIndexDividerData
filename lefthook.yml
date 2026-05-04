@@ -1,0 +1,4 @@
+pre-commit:
+  commands:
+    optimize:
+      run: npm run optimize

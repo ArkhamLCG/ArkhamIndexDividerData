@@ -15,6 +15,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "prepare": "lefthook install",
     "start": "http-server public --cors -p 0",
     "build": "npm run avif && npm run clean:sources",
     "avif": "sh cli/avif.sh",
@@ -27,6 +28,7 @@
     "arkham-divider-data": "^1.4.0",
     "dotenv": "^17.4.2",
     "http-server": "^14.1.1",
+    "lefthook": "^1.11.14",
     "sharp": "^0.33.5",
     "tsx": "^4.21.0"
   }
