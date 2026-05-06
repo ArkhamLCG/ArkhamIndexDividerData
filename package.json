@@ -21,7 +21,7 @@
     "avif": "sh cli/avif.sh",
     "optimize": "sh cli/optimize.sh",
     "clean:sources": "sh cli/clean-sources.sh",
-    "placeholders": "tsx cli/make-placeholders.ts"
+    "g": "tsx cli/generate.ts"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
