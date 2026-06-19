@@ -20,6 +20,7 @@
     "build": "npm run avif && npm run clean:sources",
     "avif": "sh cli/avif.sh",
     "optimize": "sh cli/optimize.sh",
+    "o": "npm run optimize",
     "clean:sources": "sh cli/clean-sources.sh",
     "g": "tsx cli/generate.ts"
   },
