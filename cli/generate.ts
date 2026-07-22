@@ -52,7 +52,11 @@ const campaignCodes = [
 const encounterSets = [
   ...story.encounter_sets,
   ...returnEncounters
-];
+].sort((a, b) => {
+  const nameA = encounters.find((e) => e.code === a)?.name ?? a;
+  const nameB = encounters.find((e) => e.code === b)?.name ?? b;
+  return nameA.localeCompare(nameB);
+});
 
 const scenarioEncounters = [
   ...story.scenario_encounter_sets,
@@ -73,22 +77,10 @@ const returnScenarios = [
   returnStory?.scenario,
 ].filter(isNotNil).sort(scenarioSort);
 
-const getScenarioIndex = (scenario: Scenario) => {
-  const sI = storyScenarios.indexOf(scenario);
-  const rI = returnScenarios.indexOf(scenario);
-
-  return sI === -1 ? rI : sI;
-}
-
 const scenarios = [
   ...storyScenarios,
   ...returnScenarios,
-]
-.sort((a, b) => {
-  const iA = getScenarioIndex(a);
-  const iB = getScenarioIndex(b);
-  return iA - iB;
-});
+].sort(scenarioSort);
 
 const codes = [
   ...campaignCodes,
