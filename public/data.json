@@ -10,7 +10,8 @@
     "dwl",
     "ptc",
     "tfa",
-    "tcu"
+    "tcu",
+    "tde"
   ],
   "investigator_alternatives": {
     "01001": 3,
