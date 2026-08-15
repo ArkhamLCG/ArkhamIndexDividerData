@@ -11,7 +11,8 @@
     "ptc",
     "tfa",
     "tcu",
-    "tde"
+    "tde",
+    "tic"
   ],
   "investigator_alternatives": {
     "01001": 3,
