@@ -12,7 +12,8 @@
     "tfa",
     "tcu",
     "tde",
-    "tic"
+    "tic",
+    "eoe"
   ],
   "investigator_alternatives": {
     "01001": 3,
