@@ -160,7 +160,7 @@ code: strange_happenings
 
 code: without_a_trace
 
-[ArkhamDB](https://arkhamdb.com/find?q=m:without_a_trace&sort=set&view=list&decks=encounter)
+[ArkhamDB](https://arkhamdb.com/findк?q=m:without_a_trace&sort=set&view=list&decks=encounter)
 
 
 ---
