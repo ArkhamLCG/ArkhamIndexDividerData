@@ -34,7 +34,19 @@
     "wog",
     "aon",
     "bad",
-    "enc"
+    "enc",
+    "ltr",
+    "rtr",
+    "aof",
+    "aof-inv",
+    "hfa",
+    "hfa-inv",
+    "ptr",
+    "ptr-inv",
+    "rop",
+    "rop-inv",
+    "pap",
+    "pap-inv"
   ],
   "investigator_alternatives": {
     "01001": 3,
