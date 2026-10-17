@@ -6,12 +6,6 @@
 ## Encounter Sets
 
 
-### Fortune and Folly
-
-code: fortune_and_folly
-
-[ArkhamDB](https://arkhamdb.com/find?q=m:fortune_and_folly&sort=set&view=list&decks=encounter)
-
 ### Fortune's Chosen
 
 code: fortunes_chosen
@@ -29,23 +23,9 @@ code: plan_in_shambles
 
 ## Scenarios
 
-### . The Stakeout
+### . Fortune and Folly
 
-id: fortune_and_folly_part_1
-
----
-
-#### Encounter sets
-
-[Fortune and Folly](https://arkhamdb.com/find?q=m:fortune_and_folly&sort=set&view=list&decks=encounter)
-
-[Fortune's Chosen](https://arkhamdb.com/find?q=m:fortunes_chosen&sort=set&view=list&decks=encounter)
-
-[Plan in Shambles](https://arkhamdb.com/find?q=m:plan_in_shambles&sort=set&view=list&decks=encounter)
-
-### . The Heist
-
-id: fortune_and_folly_part_2
+id: fortune_and_folly
 
 ---
 

@@ -1,8 +1,8 @@
-import path from 'node:path';
 import 'dotenv/config';
 import fs from 'node:fs';
+import path from 'node:path';
+import { isNotNil } from 'ramda';
 import sharp from 'sharp';
-import { isNotNil } from 'ramda'
 
 import type { ArkhamDivider } from 'arkham-divider-data';
 
@@ -17,26 +17,24 @@ if (!code) {
   throw new Error('story code is not set');
 }
 
-const scenarioDir = path.join(imagesDir, 'scenario', code);
-
-if (!fs.existsSync(scenarioDir)) {
-  fs.mkdirSync(scenarioDir, { recursive: true });
-}
-
 const url = process.env.ARKHAM_DIVIDER_DATA_URL;
 
 if (!url) {
   throw new Error('ARKHAM_DIVIDER_DATA_URL is not set');
 }
 
-const response = await fetch(url);
-const { stories, encounterSets: encounters }: ArkhamDivider.Core = await response.json();
+const data: ArkhamDivider.Core = url.startsWith('http')
+  ? await (await fetch(url)).json()
+  : JSON.parse(fs.readFileSync(path.resolve(ROOT, url), 'utf8'));
+const { stories, encounterSets: encounters } = data;
 
 const story = stories.find((story) => story.code === code);
 
 if (!story) {
   throw new Error(`story with code ${code} not found`);
 }
+
+const scenarioDir = path.join(imagesDir, 'scenario', code);
 
 const { investigators } = story;
 
@@ -51,17 +49,13 @@ const campaignCodes = [
 
 const encounterSets = [
   ...story.encounter_sets,
-  ...returnEncounters
+  ...returnEncounters,
+  ...(story.code === 'tsk' ? ['concealed_cards'] : []),
 ].sort((a, b) => {
   const nameA = encounters.find((e) => e.code === a)?.name ?? a;
   const nameB = encounters.find((e) => e.code === b)?.name ?? b;
   return nameA.localeCompare(nameB);
 });
-
-const scenarioEncounters = [
-  ...story.scenario_encounter_sets,
-  ...returnStory?.scenario_encounter_sets ?? [],
-]
 
 type Scenario = NonNullable<ArkhamDivider.Core['stories'][number]['scenarios']>[number];
 
@@ -82,12 +76,22 @@ const scenarios = [
   ...returnScenarios,
 ].sort(scenarioSort);
 
-const codes = [
-  ...campaignCodes,
-  ...encounterSets,
-  ...scenarioEncounters,
-  ...scenarioEncounters.map((code) => `${code}-encounter`),
-]
+const scenarioCodes = scenarios.map(({ id }) =>
+  id === story.code ? `${story.code}-scenario` : id,
+);
+
+const scenarioEncounters = scenarios.map(({ id }) => `${id}-encounter`);
+
+const hasScenarioContent = encounterSets.length > 0 || scenarios.length > 0;
+
+const codes = hasScenarioContent
+  ? [
+      ...campaignCodes,
+      ...encounterSets,
+      ...scenarioCodes,
+      ...scenarioEncounters,
+    ]
+  : [];
 
 const placeholders = [
   {
@@ -168,7 +172,12 @@ async function generatePlaceholder(width: number, height: number): Promise<Buffe
 
 // TODO: generate README.md
 
-let readme = `
+if (hasScenarioContent) {
+  if (!fs.existsSync(scenarioDir)) {
+    fs.mkdirSync(scenarioDir, { recursive: true });
+  }
+
+  let readme = `
 # ${story.name}
 
 ---
@@ -177,22 +186,23 @@ let readme = `
 
 `;
 
-for (const code of encounterSets) {
-  readme += generateEncounterReadme(code);
-}
+  for (const code of encounterSets) {
+    readme += generateEncounterReadme(code);
+  }
 
-readme += `
+  readme += `
 
 ---
 
 ## Scenarios
 `;
 
-for (const scenario of scenarios) {
-  readme += generateScenarioReadme(scenario);
-}
+  for (const scenario of scenarios) {
+    readme += generateScenarioReadme(scenario);
+  }
 
-fs.writeFileSync(path.join(scenarioDir, 'README.md'), readme);
+  fs.writeFileSync(path.join(scenarioDir, 'README.md'), readme);
+}
 
 function getEncounterUrl(code: string): string {
   return `https://arkhamdb.com/find?q=m:${code}&sort=set&view=list&decks=encounter`;
@@ -228,7 +238,12 @@ code: ${code}
 
 function generateScenarioReadme(scenario: Scenario): string {
 
-  const scenarioEncounters = encounters.filter(({ code }) => scenario.encounter_sets?.includes(code));
+  const scenarioEncounters = encounters.filter(
+    ({ code, icon }) =>
+      code === scenario.id ||
+      icon === scenario.icon ||
+      scenario.encounter_sets?.includes(code),
+  );
   let contents = `
 ### ${scenario.number_text ?? ''}. ${scenario.scenario_name}
 

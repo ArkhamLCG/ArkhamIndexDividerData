@@ -8,11 +8,15 @@
 
 ### Epic Multiplayer
 
-code: machinations_epic_multiplayer
+code: machinations_through_time_epic_multiplayer
+
+[ArkhamDB](https://arkhamdb.com/find?q=m:machinations_through_time_epic_multiplayer&sort=set&view=list&decks=encounter)
 
 ### Single Group
 
-code: machinations_single_group
+code: machinations_through_time_single_group
+
+[ArkhamDB](https://arkhamdb.com/find?q=m:machinations_through_time_single_group&sort=set&view=list&decks=encounter)
 
 
 ---
@@ -29,6 +33,6 @@ id: machinations_through_time
 
 [Machinations Through Time](https://arkhamdb.com/find?q=m:machinations_through_time&sort=set&view=list&decks=encounter)
 
-- Epic Multiplayer
+[Epic Multiplayer](https://arkhamdb.com/find?q=m:machinations_through_time_epic_multiplayer&sort=set&view=list&decks=encounter)
 
-- Single Group
+[Single Group](https://arkhamdb.com/find?q=m:machinations_through_time_single_group&sort=set&view=list&decks=encounter)
